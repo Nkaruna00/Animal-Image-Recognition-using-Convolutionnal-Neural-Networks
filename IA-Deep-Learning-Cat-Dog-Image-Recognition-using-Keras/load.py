@@ -16,6 +16,8 @@ from keras.preprocessing import image
 import os
 
 
+
+# Softmax function used in the callfunction for training
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     e_x = np.exp(x - np.max(x))
@@ -24,7 +26,7 @@ def softmax(x):
 
 
 
-
+# Function to print the model prediction result
 
 def printer(resultat,filenames):
     for x,y in np.ndenumerate(resultat):
@@ -35,7 +37,7 @@ def printer(resultat,filenames):
 
         
            
-
+#Load the model
 
 
 json_file = open('model.json', 'r')

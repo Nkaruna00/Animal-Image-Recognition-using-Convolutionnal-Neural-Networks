@@ -1,13 +1,4 @@
-# Convolutional Neural Network
 
-# Installing Theano
-# pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
-
-# Installing Tensorflow
-# Install Tensorflow from the website: https://www.tensorflow.org/versions/r0.12/get_started/os_setup.html
-
-# Installing Keras
-# pip install --upgrade keras
 
 # Part 1 - Building the CNN
 
@@ -44,6 +35,8 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 
 # Part 2 - Fitting the CNN to the images
 
+
+# Use image augmentation to augment the images
 from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
@@ -63,6 +56,8 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             batch_size = 32,
                                             class_mode = 'binary')
 
+
+# Train the model
 classifier.fit_generator(training_set,
                          samples_per_epoch = 8000,
                          nb_epoch = 25,
@@ -70,6 +65,7 @@ classifier.fit_generator(training_set,
                          nb_val_samples = 2000)
 
 
+# Save the model
 model_json = classifier.to_json()
 with open("model.json", "w") as json_file:
     json_file.write(model_json)
