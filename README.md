@@ -1,4 +1,4 @@
-# IA-Deep-Learning-Cat-Dog-Image-Recognition-using-Keras
+# Animal Image Recognition using Convolutionnal Neural Networks
 Classifies images according to whether they are an image containing a cat or a dog using a convolutional neural network.
 Made with Python3 and Keras with a Tensorflow backend.
 
